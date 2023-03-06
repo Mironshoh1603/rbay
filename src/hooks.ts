@@ -20,7 +20,7 @@ if (!process.env.REDIS_HOST) {
 export const handle: Handle = sequence(useErrors, useCachePage, useSession);
 
 export const getSession: GetSession = (event) => {
-	return event.locals.session;
+	return event.locals.session
 };
 
 DateTime.prototype.toString = function () {

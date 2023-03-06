@@ -65,7 +65,7 @@ export const createBid = async (attrs: CreateBidAttrs) => {
 	// 	const serialized = serializeHistory(attrs.amount, attrs.createdAt.toMillis());
 
 	// 	return isolatedClient
-	// 		.multi()
+	// 		.multi()    kkk
 	// 		.rPush(bidHistoryKey(attrs.itemId), serialized)
 	// 		.hSet(itemsKey(item.id), {
 	// 			bids: item.bids + 1,
