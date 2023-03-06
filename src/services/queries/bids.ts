@@ -44,7 +44,7 @@ export const createBid = async (attrs: CreateBidAttrs) => {
 			}),
 			lockedClient.zAdd(itemsByPriceKey(), {
 				value: item.id,
-				score: attrs.amount
+				score: attrs['amount']
 			})
 		]);
 	});
