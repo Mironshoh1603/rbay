@@ -17,6 +17,8 @@ export const createBid = async (attrs: CreateBidAttrs) => {
 		// 3) Writing some data
 		const item = await getItem(attrs.itemId);
 
+		// await pause(5000)
+
 		if (!item) {
 			throw new Error('Item does not exist');
 		}
