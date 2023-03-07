@@ -17,8 +17,6 @@ export const createBid = async (attrs: CreateBidAttrs) => {
 		// 3) Writing some data
 		const item = await getItem(attrs.itemId);
 
-		// await pause(5000)
-
 		if (!item) {
 			throw new Error('Item does not exist');
 		}
@@ -44,7 +42,7 @@ export const createBid = async (attrs: CreateBidAttrs) => {
 			}),
 			lockedClient.zAdd(itemsByPriceKey(), {
 				value: item.id,
-				score: attrs['amount']
+				score: attrs.amount
 			})
 		]);
 	});
@@ -67,7 +65,7 @@ export const createBid = async (attrs: CreateBidAttrs) => {
 	// 	const serialized = serializeHistory(attrs.amount, attrs.createdAt.toMillis());
 
 	// 	return isolatedClient
-	// 		.multi()    kkk
+	// 		.multi()
 	// 		.rPush(bidHistoryKey(attrs.itemId), serialized)
 	// 		.hSet(itemsKey(item.id), {
 	// 			bids: item.bids + 1,
